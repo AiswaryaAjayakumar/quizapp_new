@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:quizapp_model/view/question_screen/question_screen.dart';
-import 'package:quizapp_model/view/result_screen/result_screen.dart';
+// import 'package:quizapp_model/view/question_screen/question_screen.dart';
+// import 'package:quizapp_model/view/result_screen/result_screen.dart';
 import 'package:quizapp_model/view/splash_screen/splash_screen.dart';
 
 void main(List<String> args) {

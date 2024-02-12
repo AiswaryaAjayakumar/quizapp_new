@@ -17,24 +17,28 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     List<Map> homepageList = [
       {
-        "title": "Literature",
+        "title": "Sports",
         "itemimage":
-            "https://images.pexels.com/photos/46274/pexels-photo-46274.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRzgpCNgDuAmTbFHgC98_fl-KzgMbROcy7LJQ&usqp=CAU",
+        "no": "5 Questions"
       },
       {
-        "title": "sports",
+        "title": "Chemistry",
         "itemimage":
-            "https://images.pexels.com/photos/46798/the-ball-stadion-football-the-pitch-46798.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRTx_heTRiZyrY507zyVHKXQRfmK7Zsrk4LA&usqp=CAU",
+        "no": "5 Questions"
       },
       {
-        "title": "science",
+        "title": "Math",
         "itemimage":
-            "https://images.pexels.com/photos/132477/pexels-photo-132477.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR7DWAy0M3ULstBP6SmaIhbfPIi2D-SA7aiXw&usqp=CAU",
+        "no": "5 Questions"
       },
       {
-        "title": "IT",
+        "title": "History",
         "itemimage":
-            "https://images.pexels.com/photos/60504/security-protection-anti-virus-software-60504.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQb3WrHaXtUJ3PK2OD_8o0b1mMRDQA1rj3bEg&usqp=CAU",
+        "no": "5 Questions"
       },
     ];
     return Scaffold(
@@ -52,7 +56,7 @@ class _HomePageState extends State<HomePage> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        'Hi, john',
+                        'Hi, Aishu',
                         style: TextStyle(
                             color: Colorconstant.mycustomwhite,
                             fontSize: 25,
@@ -71,7 +75,7 @@ class _HomePageState extends State<HomePage> {
                     decoration: BoxDecoration(
                       image: DecorationImage(
                           image: NetworkImage(
-                              "https://images.pexels.com/photos/1851164/pexels-photo-1851164.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"),
+                              "https://images.pexels.com/photos/712513/pexels-photo-712513.jpeg?auto=compress&cs=tinysrgb&w=800"),
                           fit: BoxFit.cover),
                       color: Colors.orange[300],
                       borderRadius: BorderRadius.circular(30),
@@ -119,8 +123,8 @@ class _HomePageState extends State<HomePage> {
                   gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                       crossAxisCount: 2, // Adjust as per your needs
                       crossAxisSpacing: 10.0,
-                      mainAxisSpacing: 10.0,
-                      mainAxisExtent: 200),
+                      mainAxisSpacing: 20,
+                      mainAxisExtent: 230),
                   itemBuilder: (BuildContext context, int index) {
                     return InkWell(
                       onTap: () {
@@ -176,6 +180,13 @@ class _HomePageState extends State<HomePage> {
                                     fontWeight: FontWeight.bold,
                                     fontSize: 15),
                               ),
+                              Text(
+                                homepageList[index]["no"],
+                                style: TextStyle(
+                                    color: Color.fromARGB(255, 159, 157, 157),
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 10),
+                              )
                             ],
                           ),
                         ),

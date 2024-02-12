@@ -32,7 +32,7 @@ class _QuestionScreenState extends State<QuestionScreen> {
           Padding(
             padding: const EdgeInsets.all(15),
             child: Text(
-              "${questionindex + 1}/${Questiondb.literaturequestion.length}",
+              "${questionindex + 1}/${Questiondb.sportsQuestions.length}",
               style: TextStyle(
                 color: Colorconstant.mycustomwhite,
                 fontWeight: FontWeight.bold,
@@ -42,197 +42,195 @@ class _QuestionScreenState extends State<QuestionScreen> {
           )
         ],
       ),
-      body: Column(
-        children: [
-          SizedBox(
-            height: 50,
-          ),
-          // Progress Bar
-          LinearProgressIndicator(
-            value: (questionindex + 1) / Questiondb.literaturequestion.length,
-            color: Colorconstant.mycustomblue,
-            backgroundColor: Colorconstant.mycustomgrey,
-          ),
-          SizedBox(
-            height: 25,
-          ),
-          Padding(
-            padding: const EdgeInsets.only(left: 15, right: 15, bottom: 10),
-            child: Container(
-              padding: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
-              height: 200,
-              width: 400,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(20),
-                color: Colorconstant.mycustomgrey,
-              ),
-              child: Text(
-                Questiondb.literaturequestion[questionindex]["question"]
-                    .toString(),
-                style: TextStyle(
-                  color: Colorconstant.mycustomwhite,
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold,
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            SizedBox(
+              height: 50,
+            ),
+            // Progress Bar
+            LinearProgressIndicator(
+              value: (questionindex + 1) / Questiondb.sportsQuestions.length,
+              color: Colorconstant.mycustomblue,
+              backgroundColor: Colorconstant.mycustomgrey,
+            ),
+            SizedBox(
+              height: 25,
+            ),
+            Padding(
+              padding: const EdgeInsets.only(left: 15, right: 15, bottom: 10),
+              child: Container(
+                padding: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+                height: 200,
+                width: 400,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(20),
+                  color: Colorconstant.mycustomgrey,
+                ),
+                child: Text(
+                  Questiondb.sportsQuestions[questionindex]["question"]
+                      .toString(),
+                  style: TextStyle(
+                    color: Colorconstant.mycustomwhite,
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
               ),
             ),
-          ),
 
-          // 2nd container
-          ListView.separated(
-            shrinkWrap: true,
-            physics: NeverScrollableScrollPhysics(),
-            itemBuilder: (context, index) {
-              return Padding(
-                padding: const EdgeInsets.all(15),
-                child: InkWell(
-                  onTap: () {
-                    // selectedindex = index;
-                    // getcolor(index);
-                    // print('selectedindex');
-                    // setState(() {});
-                    if (selectedindex != null)
-                      return; //  to stop selecting multiple answers
-                    selectedindex = index;
-                    getcolor(index);
-                    print('selectedindex');
-                    setState(() {});
-                  },
-                  child: Container(
-                    height: 60,
-                    width: 50,
-                    decoration: BoxDecoration(
-                      color: getcolor(index),
-                      borderRadius: BorderRadius.circular(10),
-                      border: Border.all(
-                        width: 3,
+            // 2nd container
+            ListView.separated(
+              shrinkWrap: true,
+              physics: NeverScrollableScrollPhysics(),
+              itemBuilder: (context, index) {
+                return Padding(
+                  padding: const EdgeInsets.all(15),
+                  child: InkWell(
+                    onTap: () {
+                      if (selectedindex != null)
+                        return; //  to stop selecting multiple answers
+                      selectedindex = index;
+                      getcolor(index);
+                      print('selectedindex');
+                      setState(() {});
+                    },
+                    child: Container(
+                      height: 60,
+                      width: 50,
+                      decoration: BoxDecoration(
                         color: getcolor(index),
+                        borderRadius: BorderRadius.circular(10),
+                        border: Border.all(
+                          width: 3,
+                          color: getcolor(index),
+                        ),
                       ),
-                    ),
-                    child: Padding(
-                      padding: const EdgeInsets.only(left: 10, right: 10),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text(
-                            Questiondb.literaturequestion[questionindex]
-                                    ["options"][index]
-                                .toString(),
-                            style: TextStyle(
-                              color: Colorconstant.mycustomwhite,
-                            ),
-                          ),
-                          Container(
-                            height: 15,
-                            width: 15,
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(20),
-                              border: Border.all(
+                      child: Padding(
+                        padding: const EdgeInsets.only(left: 10, right: 10),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(
+                              Questiondb.sportsQuestions[questionindex]
+                                      ["options"][index]
+                                  .toString(),
+                              style: TextStyle(
                                 color: Colorconstant.mycustomwhite,
                               ),
                             ),
-                          )
-                        ],
+                            Container(
+                              height: 15,
+                              width: 15,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(20),
+                                border: Border.all(
+                                  color: Colorconstant.mycustomwhite,
+                                ),
+                              ),
+                            )
+                          ],
+                        ),
                       ),
                     ),
                   ),
-                ),
-              );
-            },
-            separatorBuilder: (context, optionIndex) => SizedBox(height: 0),
-            itemCount:
-                Questiondb.literaturequestion[questionindex]["options"].length,
-          ),
-
-          SizedBox(
-            height: 10,
-          ),
-
-          ElevatedButton(
-            style: ButtonStyle(
-              backgroundColor:
-                  MaterialStatePropertyAll(Colorconstant.mycustomblue),
-              shape: MaterialStatePropertyAll(RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(10),
-              )),
-            ),
-            onPressed: () {
-              if (selectedindex != null &&
-                  selectedindex ==
-                      Questiondb.literaturequestion[questionindex]["answer"]) {
-                count++;
-              }
-              // ch
-              if (selectedindex == null) {
-                skippedcount++;
-              }
-              // ch
-              selectedindex = null;
-              if (questionindex + 1 < Questiondb.literaturequestion.length) {
-                setState(() {
-                  questionindex++;
-                });
-              } else {
-                print('Correct Answers: $count');
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) => ResultScreen(
-                            count: count,
-                            rightanswer: rightanswer,
-                            wronganswer: wronganswer,
-                            skippedcount: skippedcount,
-                            totalqn: totalqn,
-                          )),
                 );
-              }
-            },
-            child: Text(
-              "       Next      ",
-              style: TextStyle(color: Colors.white),
+              },
+              separatorBuilder: (context, optionIndex) => SizedBox(height: 0),
+              itemCount:
+                  Questiondb.sportsQuestions[questionindex]["options"].length,
             ),
-          ),
 
-// skip, if the questionindex is less that total qns, increment it,
-          SizedBox(
-            height: 10,
-          ),
-          // Row(
-          //   mainAxisAlignment: MainAxisAlignment.center,
-          //   children: [
-          //     ElevatedButton(
-          //       onPressed: () {
-          //         if (questionindex + 1 <
-          //             Questiondb.literaturequestion.length) {
-          //           setState(() {
-          //             questionindex++;
-          //             selectedindex = null;
-          //           });
-          //         } else {
-          //           // Navigator.pushReplacement(
-          //           //     context,
-          //           //     MaterialPageRoute(
-          //           //       builder: (context) => ResultScreen(count: count),
-          //           //     ));
-          //         }
-          //       },
-          //       child: Text("Skip"),
-          //     ),
-          //   ],
-          // ),
-        ],
+            SizedBox(
+              height: 10,
+            ),
+
+            ElevatedButton(
+              style: ButtonStyle(
+                backgroundColor:
+                    MaterialStatePropertyAll(Colorconstant.mycustomblue),
+                shape: MaterialStatePropertyAll(RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(10),
+                )),
+              ),
+              onPressed: () {
+                if (selectedindex != null &&
+                    selectedindex ==
+                        Questiondb.sportsQuestions[questionindex]["answer"]) {
+                  count++;
+                }
+                // ch
+                if (selectedindex == null) {
+                  skippedcount++;
+                }
+                // ch
+                selectedindex = null;
+                if (questionindex + 1 < Questiondb.sportsQuestions.length) {
+                  setState(() {
+                    questionindex++;
+                  });
+                } else {
+                  print('Correct Answers: $count');
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => ResultScreen(
+                              count: count,
+                              rightanswer: rightanswer,
+                              wronganswer: wronganswer,
+                              skippedcount: skippedcount,
+                              totalqn: totalqn,
+                            )),
+                  );
+                }
+              },
+              child: Text(
+                "       Next      ",
+                style: TextStyle(color: Colors.white),
+              ),
+            ),
+
+            // skip, if the questionindex is less that total qns, increment it,
+            SizedBox(
+              height: 10,
+            ),
+            // Row(
+            //   mainAxisAlignment: MainAxisAlignment.center,
+            //   children: [
+            //     ElevatedButton(
+            //       onPressed: () {
+            //         if (questionindex + 1 <
+            //             Questiondb.literaturequestion.length) {
+            //           setState(() {
+            //             questionindex++;
+            //             selectedindex = null;
+            //           });
+            //         } else {
+            //           // Navigator.pushReplacement(
+            //           //     context,
+            //           //     MaterialPageRoute(
+            //           //       builder: (context) => ResultScreen(count: count),
+            //           //     ));
+            //         }
+            //       },
+            //       child: Text("Skip"),
+            //     ),
+            //   ],
+            // ),
+          ],
+        ),
       ),
     );
   }
 
   Color getcolor(int index) {
     if (selectedindex != null &&
-        index == Questiondb.literaturequestion[questionindex]["answer"]) {
+        index == Questiondb.sportsQuestions[questionindex]["answer"]) {
       return Colorconstant.mycustomgreen;
     }
     if (selectedindex == index) {
       if (selectedindex ==
-          Questiondb.literaturequestion[questionindex]["answer"]) {
+          Questiondb.sportsQuestions[questionindex]["answer"]) {
         return Colorconstant.mycustomgreen;
       } else {
         return Colors.red;

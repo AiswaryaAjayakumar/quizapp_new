@@ -1,152 +1,147 @@
 class Questiondb {
   // void main() {
-  static List<Map<String, dynamic>> literaturequestion = [
+  static List<Map<String, dynamic>> sportsQuestions = [
     {
-      "question": "Who wrote the poem 'The Road Not Taken'?",
+      "question": "Which basketball player is known as 'The King'?",
       "options": [
-        "Robert Frost",
-        "Emily Dickinson",
-        "Langston Hughes",
-        "Walt Whitman"
+        "LeBron James",
+        "Stephen Curry",
+        "Kevin Durant",
+        "Kawhi Leonard"
       ],
       "answer": 0
     },
     {
-      "question": "What is the poetic form with fourteen lines?",
-      "options": ["Haiku", "Sonnet", "Limerick", "Elegy"],
-      "answer": 1
+      "question": "In which sport would you perform a slam dunk?",
+      "options": ["Basketball", "Tennis", "Soccer", "Golf"],
+      "answer": 0
     },
     {
-      "question": "Which poet wrote 'Howl'?",
+      "question":
+          "Who holds the record for the most Olympic gold medals in swimming?",
       "options": [
-        "Allen Ginsberg",
-        "Sylvia Plath",
-        "T.S. Eliot",
-        "E.E. Cummings"
+        "Michael Phelps",
+        "Usain Bolt",
+        "Simone Biles",
+        "Katie Ledecky"
       ],
       "answer": 0
     },
     {
-      "question": "What is the term for a poem expressing mourning?",
-      "options": ["Ode", "Elegy", "Ballad", "Sonnet"],
-      "answer": 1
+      "question": "In which sport does Lionel Messi excel?",
+      "options": ["Soccer", "Golf", "Cricket", "Tennis"],
+      "answer": 0
     },
     {
-      "question": "Who wrote the poem 'The Raven'?",
-      "options": [
-        "Edgar Allan Poe",
-        "William Wordsworth",
-        "Emily Dickinson",
-        "John Keats"
-      ],
+      "question": "Which country is known for its dominance in cricket?",
+      "options": ["India", "Brazil", "United States", "China"],
       "answer": 0
     }
   ];
 
-  static List<Map> sportsquestion = [
-    {
-      "question": "Which sport is played with a shuttlecock?",
-      "options": ["Badminton", "Tennis", "Squash", "Table Tennis"],
-      "answer": 0
-    },
-    {
-      "question": "What is the term used for a perfect score in bowling?",
-      "options": ["Strike", "Spare", "Turkey", "300"],
-      "answer": 3
-    },
-    {
-      "question": "In which country was the sport of curling invented?",
-      "options": ["Scotland", "Canada", "Norway", "Russia"],
-      "answer": 0
-    },
-    {
-      "question": "Which sport is known as the 'king of sports'?",
-      "options": ["Soccer", "Cricket", "Baseball", "Polo"],
-      "answer": 3
-    },
-    {
-      "question": "Who is considered the fastest man alive in track and field?",
-      "options": ["Usain Bolt", "Carl Lewis", "Jesse Owens", "Michael Johnson"],
-      "answer": 0
-    }
-  ];
-
-  static List<Map> sciencequestion = [
+  static List<Map> chemistryquestions = [
     {
       "question": "What is the chemical symbol for gold?",
-      "options": ["Au", "Ag", "Fe", "Cu"],
+      "options": ["Au", "Ag", "Fe", "Hg"],
       "answer": 0
     },
     {
-      "question": "Who developed the theory of relativity?",
+      "question": "Which gas is the most abundant in Earth's atmosphere?",
+      "options": ["Nitrogen", "Oxygen", "Carbon Dioxide", "Helium"],
+      "answer": 0
+    },
+    {
+      "question": "What is the pH of a neutral substance?",
+      "options": ["7", "5", "9", "2"],
+      "answer": 0
+    },
+    {
+      "question": "What is the chemical formula for water?",
+      "options": ["H2O", "CO2", "CH4", "O2"],
+      "answer": 0
+    },
+    {
+      "question": "Which element is essential for all organic compounds?",
+      "options": ["Carbon", "Iron", "Calcium", "Sodium"],
+      "answer": 0
+    }
+  ];
+  static List<Map> mathQuestions = [
+    {
+      "question": "Who is often referred to as the 'Father of Geometry'?",
+      "options": ["Euclid", "Pythagoras", "Archimedes", "Isaac Newton"],
+      "answer": 0
+    },
+    {
+      "question":
+          "In which branch of mathematics do you study the properties and relationships of shapes and spaces?",
+      "options": ["Geometry", "Algebra", "Calculus", "Statistics"],
+      "answer": 0
+    },
+    {
+      "question": "What is the value of π (pi) to two decimal places?",
+      "options": ["3.14", "2.71", "1.62", "4.20"],
+      "answer": 0
+    },
+    {
+      "question":
+          "Which mathematician formulated the laws of motion and universal gravitation?",
       "options": [
-        "Albert Einstein",
         "Isaac Newton",
-        "Stephen Hawking",
-        "Galileo Galilei"
+        "Albert Einstein",
+        "Pythagoras",
+        "Blaise Pascal"
       ],
       "answer": 0
     },
     {
-      "question":
-          "What is the process by which plants make their own food called?",
-      "options": [
-        "Photosynthesis",
-        "Respiration",
-        "Transpiration",
-        "Fermentation"
-      ],
-      "answer": 0
-    },
-    {
-      "question":
-          "Which gas makes up the largest percentage of the Earth's atmosphere?",
-      "options": ["Nitrogen", "Oxygen", "Carbon Dioxide", "Argon"],
-      "answer": 0
-    },
-    {
-      "question": "What is the smallest unit of matter?",
-      "options": ["Atom", "Molecule", "Cell", "Electron"],
+      "question": "What is the sum of the angles in a triangle?",
+      "options": ["180 degrees", "90 degrees", "360 degrees", "120 degrees"],
       "answer": 0
     }
   ];
 
-  static List<Map> itquestions = [
+  static List<Map> historyQuestions = [
     {
-      "question": "What does 'HTML' stand for?",
+      "question": "Who was the first President of the United States?",
       "options": [
-        "Hyper Text Markup Language",
-        "Hyperlinks and Text Markup Language",
-        "Home Tool Markup Language",
-        "Hyperlinks Tool Markup Language"
+        "George Washington",
+        "Thomas Jefferson",
+        "John Adams",
+        "Abraham Lincoln"
       ],
       "answer": 0
     },
     {
       "question":
-          "Which programming language is commonly used for building Android apps?",
-      "options": ["Java", "Python", "C++", "Swift"],
+          "In which year did Christopher Columbus first reach the Americas?",
+      "options": ["1492", "1607", "1776", "1066"],
+      "answer": 0
+    },
+    {
+      "question": "What ancient civilization built the Great Pyramids of Giza?",
+      "options": ["Egyptian", "Greek", "Roman", "Mesopotamian"],
       "answer": 0
     },
     {
       "question":
-          "What is the term for a software program designed to prevent unauthorized access to or from a private network?",
-      "options": ["Firewall", "Router", "Modem", "Antivirus"],
-      "answer": 0
-    },
-    {
-      "question": "What does 'URL' stand for?",
+          "Which war was fought between the Northern and Southern states of the United States from 1861 to 1865?",
       "options": [
-        "Uniform Resource Locator",
-        "Universal Resource Locator",
-        "Uniform Resource Link",
-        "Universal Resource Link"
+        "American Civil War",
+        "World War I",
+        "World War II",
+        "Vietnam War"
       ],
       "answer": 0
     },
     {
-      "question": "Which company developed the Java programming language?",
-      "options": ["Sun Microsystems", "Microsoft", "Apple", "Google"],
+      "question": "Who was the leader of the Soviet Union during World War II?",
+      "options": [
+        "Joseph Stalin",
+        "Vladimir Lenin",
+        "Nikita Khrushchev",
+        "Mikhail Gorbachev"
+      ],
       "answer": 0
     }
   ];

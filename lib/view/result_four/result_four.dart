@@ -1,8 +1,10 @@
+// ignore_for_file: must_be_immutable
+
 import 'package:flutter/material.dart';
 import 'package:quizapp_model/utils/color_constant.dart';
 import 'package:quizapp_model/utils/sample_questions/sample_questions.dart';
-import 'package:quizapp_model/view/home_page/hpme_page.dart';
-import 'package:quizapp_model/view/question_screen/question_screen.dart';
+import 'package:quizapp_model/view/home_page/home_page.dart';
+//import 'package:quizapp_model/view/question_screen/question_screen.dart';
 
 class ResultFour extends StatelessWidget {
   // const ResultScreen({super.key});
@@ -24,7 +26,7 @@ class ResultFour extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    int totalQn = Questiondb.itquestions.length;
+    int totalQn = Questiondb.historyQuestions.length;
     int wrongAnswers = totalQn - count;
 
     // int skippedQuestions = totalQn - (count + wrongAnswers);
